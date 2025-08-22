@@ -13,14 +13,14 @@
 
 ## Why Start with Brute Force?
 
-As a beginner, **always start with brute force** when solving coding problems[40][43][51]. Here's why:
+As a beginner, **always start with brute force** when solving coding problems. Here's why:
 
 1. **Builds Understanding**: Helps you truly understand the problem before optimizing
 2. **Shows Progress**: A working solution is better than no solution
 3. **Interview Strategy**: Demonstrates problem-solving approach to interviewers
 4. **Foundation for Optimization**: Understanding the naive approach helps identify bottlenecks
 
-**Remember**: In interviews, mention "I can start with brute force and then optimize" to show your thought process[40].
+**Remember**: In interviews, mention "I can start with brute force and then optimize" to show your thought process.
 
 ---
 
@@ -71,7 +71,7 @@ var twoSum = function(nums, target) {
 };
 ```
 
-**Why it's fast**: Instead of checking all numbers for each element, we use a hash map for instant lookup[41].
+**Why it's fast**: Instead of checking all numbers for each element, we use a hash map for instant lookup.
 - Hash map lookup: O(1) time
 - One pass through array: O(n) time
 - **Key insight**: Trade space for time!
@@ -98,7 +98,7 @@ var containsDuplicateBruteForce = function(nums) {
 };
 ```
 
-**Why it's slow**: For each element, we scan the entire rest of the array[52][55].
+**Why it's slow**: For each element, we scan the entire rest of the array.
 
 #### ⚡ Optimized Solution 1 - O(n log n)
 ```javascript
@@ -116,7 +116,7 @@ var containsDuplicateSort = function(nums) {
 };
 ```
 
-**Why it's better**: After sorting, duplicates are adjacent. One pass to check neighbors[55].
+**Why it's better**: After sorting, duplicates are adjacent. One pass to check neighbors.
 
 #### ⚡ Optimized Solution 2 - O(n)
 ```javascript
@@ -140,7 +140,7 @@ var containsDuplicateOneLiner = function(nums) {
 };
 ```
 
-**Why it's fastest**: Set operations (add/has) are O(1). Single pass through array[58].
+**Why it's fastest**: Set operations (add/has) are O(1). Single pass through array.
 
 ---
 
@@ -167,7 +167,7 @@ var maxProfitBruteForce = function(prices) {
 };
 ```
 
-**Why it's slow**: We check every possible buy-sell combination[42][45].
+**Why it's slow**: We check every possible buy-sell combination.
 - For each buy day, check all future sell days
 - Total combinations: n²/2 ≈ O(n²)
 
@@ -192,7 +192,7 @@ var maxProfit = function(prices) {
 };
 ```
 
-**Why it's fast**: We realize we only need to track the minimum price seen so far. For each day, we calculate profit if selling that day[1][24].
+**Why it's fast**: We realize we only need to track the minimum price seen so far. For each day, we calculate profit if selling that day.
 - **Key insight**: We don't need to check all combinations, just track minimum and calculate profit for each day!
 
 ---
@@ -241,7 +241,7 @@ var maxSubArrayWorst = function(nums) {
 };
 ```
 
-**Why O(n³) is worse**: For each start-end pair, we recalculate the entire sum[53][56].
+**Why O(n³) is worse**: For each start-end pair, we recalculate the entire sum.
 
 #### ⚡ Optimized Solution - Kadane's Algorithm O(n)
 ```javascript
@@ -261,7 +261,7 @@ var maxSubArray = function(nums) {
 };
 ```
 
-**Why it's fast**: Kadane's algorithm makes a key observation: at each position, we only need to decide whether to extend the previous subarray or start fresh[53][62].
+**Why it's fast**: Kadane's algorithm makes a key observation: at each position, we only need to decide whether to extend the previous subarray or start fresh.
 - **Key insight**: If previous sum + current element < current element, start fresh!
 
 ---
@@ -275,25 +275,9 @@ var maxSubArray = function(nums) {
 #### 🐌 Brute Force Approach - Not Really Applicable
 ```javascript
 // There's no obvious brute force for this problem
-// You might try removing matched pairs repeatedly:
-var isValidBruteForce = function(s) {
-    let str = s;
-    let changed = true;
-    
-    while (changed) {
-        changed = false;
-        let newStr = str.replace(/\(\)|\[\]|\{\}/g, '');
-        if (newStr !== str) {
-            changed = true;
-            str = newStr;
-        }
-    }
-    
-    return str === '';
-};
+
 ```
 
-**Why this is bad**: We might need to scan the string multiple times[54].
 
 #### ⚡ Optimized Solution - Stack O(n)
 ```javascript
@@ -323,7 +307,7 @@ var isValid = function(s) {
 };
 ```
 
-**Why stack is perfect**: Stack follows LIFO (Last In, First Out) - perfect for matching nested structures[54][57].
+**Why stack is perfect**: Stack follows LIFO (Last In, First Out) - perfect for matching nested structures.
 - **Key insight**: Most recent opening bracket should match current closing bracket!
 
 ---
@@ -369,7 +353,7 @@ var isAnagram = function(s, t) {
 };
 ```
 
-**Why it's faster**: Count characters in O(n) time instead of sorting[41].
+**Why it's faster**: Count characters in O(n) time instead of sorting.
 
 ---
 
@@ -413,7 +397,7 @@ var climbStairs = function(n) {
 };
 ```
 
-**Why it's fast**: Calculate each value once and reuse results[35][37].
+**Why it's fast**: Calculate each value once and reuse results.
 - **Key insight**: This is Fibonacci sequence - f(n) = f(n-1) + f(n-2)!
 
 ---
