@@ -440,6 +440,7 @@ var isValid = function(s) {
     };
     
     for (let char of s) {
+        //in → checks keys
         if (char in mapping) {
             // Closing bracket - check if it matches
             const topElement = stack.pop();
